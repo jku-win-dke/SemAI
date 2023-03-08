@@ -2,4 +2,4 @@
 
 Course instructor: Dr. Bernd Neumayr
 
-This repository contains homework assignments as well as submissions by students. Student submissions are collected via Moodle.
+This repository contains homework assignments as well as submissions from students. Student submissions are collected via Moodle. 
