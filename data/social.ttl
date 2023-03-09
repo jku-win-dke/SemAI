@@ -1,0 +1,22 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://example.org/> .
+
+:jane  a :Person; 
+	:gender "female"@en; :age 22;
+	:friend :mary, :bob, :bill;
+	:loves :bill.
+
+:mary  a :Person; 
+	:gender "female"; :age 22;
+	:friend :bob;
+	:loves :bill.
+
+:bob  a :Person; 
+	:age 26;
+	:loves :jane.
+
+:bill  a :Person; 
+	:gender "male";
+	:friend :mary, :jane.
+
+	

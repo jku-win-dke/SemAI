@@ -1,0 +1,331 @@
+@base         <http://dke.jku.at/example/> . 
+@prefix :     <solarsystem/> .
+@prefix v:    <examplevocabulary/> .
+@prefix dbr:  <http://dbpedia.org/resource/> .
+@prefix dbo:  <http://dbpedia.org/ontology/> .
+@prefix dbd:	<http://dbpedia.org/datatype/> 
+@prefix sdo:  <http://schema.org/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix wdp:  <http://www.wikidata.org/prop/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+
+<solarsystem> 
+  rdf:type sdo:Dataset; 
+  sdo:description "An RDF graph about the solar system and nearby stars."@en;
+  sdo:author <BerndNeumayr>.  
+
+v:apoapsis 
+  skos:exactMatch wdp:P2243;
+  sdo:description "distance, at which a celestial body is the farthest to the object it orbits"@en;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Apsis>;
+.
+
+v:uom 
+  a rdf:Property ;
+  rdfs:label "unit of measurement"@en ;
+  sdo:description "unit of measurement (as range) of a structured value (as domain), the unit of measurement is typically taken from QUDT"@en ;
+  skos:closeMatch <http://wikiba.se/ontology#quantityUnit> ;
+.  
+
+unit:AU 
+  rdfs:label "Astronomical Unit" ;
+  rdfs:seeAlso <http://qudt.org/2.0/vocab/unit/space-and-time>;
+  sdo:description "An astronomical unit is a unit of length equal to 149,597,870 kilometres or approximately the mean Earth Sun distance."@en.
+
+unit:KM 
+  rdfs:label "Kilometer ". 
+  
+unit:DEG_C
+  rdfs:label "Degree Celsius" .
+  
+unit:K
+  rdfs:label "Kelvin" ;
+  sdo:description "The SI base unit of temperature, previously called the degree Kelvin. One kelvin represents the same temperature difference as one degree Celsius."@en .
+
+unit:LY
+  rdfs:label "Lightyear" ;   
+  sdo:description "A unit of length defining the distance, in meters, that light travels in a vacuum in one year."@en.
+  
+  
+:Sun 
+  skos:exactMatch dbr:Sun;
+  rdf:type dbo:Star ;
+  sdo:name "Sun"@en, "Sonne"@de ;
+  v:mass   [rdf:value 1.9884E30; v:uom unit:KG] ;  
+  v:radius [rdf:value 696342; v:uom unit:KM] ;
+  v:temperature [rdf:value 5788; v:uom unit:K] ; 
+.
+
+
+:Mercury 
+  skos:exactMatch dbr:Mercury_%28planet%29;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 0.467; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 87.97; v:uom unit:DAY ];
+  v:radius [rdf:value 2439.7; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -217; 
+      v:uom unit:Deg_C; 
+      v:mod v:min ], 
+    [rdf:value 403; 
+      v:uom unit:Deg_C; 
+      v:mod v:max ];
+  v:nrOfMoons 0;
+.
+
+
+:Venus 
+  skos:exactMatch dbr:Venus;
+  rdf:type dbo:Planet;
+  v:orbits :Sun; 
+  v:apoapsis [rdf:value 0.728; v:uom unit:AU] ;
+  v:mass [rdf:value 4.8675E24; v:uom unit:KG] ;  
+  v:radius [rdf:value 6051.8; v:uom unit:KM] ;
+  v:temperature [rdf:value 462; v:uom unit:Deg_C]; 
+  v:nrOfMoons 0;
+.
+
+
+:Earth 
+  skos:exactMatch dbr:Earth;
+  rdf:type dbo:Planet ; 
+  sdo:name "Planet Earth"@en, "Erde"@de ;
+  v:orbits :Sun ; 
+  v:apoapsis 
+    [rdf:value 1.017; v:uom unit:AU],
+    [rdf:value 149597871; v:uom unit:KM]; 
+  :temperature  
+    [rdf:value -93; v:uom unit:Deg_C; v:mod v:min],
+    [rdf:value +58; v:uom unit:Deg_C; v:mod v:max];
+  v:nrOfMoons 1;
+.
+    
+:Moon
+  skos:exactMatch dbr:Moon;
+  rdf:type dbo:Satellite ;
+  sdo:name "Moon"@en, "Mond"@de ;
+  v:orbits :Earth ;
+  v:mass [rdf:value 7.342E22; v:uom unit:KG] ;  
+  v:radius [rdf:value 1738.1; v:uom unit:KM] ;
+  v:apoapsis [rdf:value 405400; v:uom unit:KM];
+  v:temperature 
+    [rdf:value -197; 
+      v:uom unit:Deg_C; 
+      v:mod v:min ], 
+    [rdf:value 93; 
+      v:uom unit:Deg_C; 
+      v:mod v:max ];
+.
+                   
+
+:Mars 
+  skos:exactMatch dbr:Mars;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 1.666; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 686.97; v:uom unit:DAY ];
+  v:radius [rdf:value 3389.5; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -143; 
+      v:uom unit:Deg_C; 
+      v:mod v:min ], 
+    [rdf:value 35; 
+      v:uom unit:Deg_C; 
+      v:mod v:max ]; 
+  v:nrOfMoons 2;      
+.
+
+  
+:Ceres  
+  skos:exactMatch dbr:1_Ceres; 
+  rdf:type dbo:DwarfPlanet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 2.97; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 4.6; v:uom unit:YR ];
+  v:radius [rdf:value 473; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -62; 
+      v:uom unit:Deg_C; 
+      v:mod v:max ];  
+.
+
+  
+:Jupiter  
+  skos:exactMatch dbr:Jupiter;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 5.4588; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 4332.59; v:uom unit:DAY ];
+  v:radius [rdf:value 71492; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -108; 
+      v:uom unit:Deg_C ]; 
+  v:nrOfMoons 79;      
+.
+
+:Saturn  
+  skos:exactMatch dbr:Saturn;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 9.0412; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 29.45; v:uom unit:YR ];
+  v:radius [rdf:value 60268; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -139; 
+      v:uom unit:Deg_C ];
+  v:nrOfMoons 82;      
+.
+
+:Uranus  
+  skos:exactMatch dbr:Uranus;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 20.11; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 84.0205; v:uom unit:YR ];
+  v:radius [rdf:value 25362; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -197.2; 
+      v:uom unit:Deg_C ];  
+  v:nrOfMoons 27;
+.
+
+:Neptune  
+  skos:exactMatch dbr:Neptune;
+  rdf:type dbo:Planet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 30.33; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 164.8; v:uom unit:YR ];
+  v:radius [rdf:value 24622; v:uom unit:KM] ;
+  v:temperature 
+    [rdf:value -201; 
+      v:uom unit:Deg_C ];
+  v:nrOfMoons 14;      
+.
+      
+
+:Pluto   
+  skos:exactMatch dbr:Pluto;
+  rdf:type dbo:DwarfPlanet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 49.3; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 4.6; v:uom unit:YR ];
+  v:radius [rdf:value 1188.3; v:uom unit:KM] ;
+  v:temperature [rdf:value -229; v:uom unit:Deg_C];  
+  v:nrOfMoons 5;
+.
+
+:Haumea   
+  rdf:type dbo:DwarfPlanet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 51.483; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 284.12; v:uom unit:YR ];
+  v:radius [rdf:value 816; v:uom unit:KM] ;
+  v:temperature [rdf:value -240; v:uom unit:Deg_C];  
+  v:nrOfMoons 2;
+.
+
+:Makemake  
+  rdf:type dbo:DwarfPlanet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 52.84; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 309.09; v:uom unit:YR ];
+  v:radius [rdf:value 715; v:uom unit:KM] ;
+  v:temperature [rdf:value 40; v:uom unit:K];  
+.
+
+:Eris 
+  rdf:type dbo:DwarfPlanet;
+  v:orbits :Sun;
+  v:apoapsis [rdf:value 97.651; v:uom unit:AU] ;
+  v:orbitalPeriod [rdf:value 558; v:uom unit:YR ];
+  v:radius [rdf:value 1163; v:uom unit:KM] ;
+  v:temperature [rdf:value 42; v:uom unit:K];  
+.
+
+  
+  
+:AlphaCentauriA 
+  skos:exactMatch wd:Q2090157 ;  
+  rdf:type dbo:Star;
+  v:distanceFromSun 
+    [ rdf:value 276363; v:uom unit:AU],
+    [ rdf:value 4.37; v:uom unit:LY];
+  v:mass [ rdf:value 1.1; v:uom v:SolarMass ] ;
+  v:radius [rdf:value 1.22; v:uom v:SolarRadius ] ;
+.
+    
+:AlphaCentauriB
+  skos:exactMatch wd:Q1052548 ;  
+  rdf:type dbo:Star ;
+  v:distanceFromSun [ rdf:value 4.37; v:uom unit:LY] ;
+  v:mass [ rdf:value 0.9; v:uom v:SolarMass ] ;
+  v:radius [rdf:value 0.86; v:uom v:SolarRadius ] ;
+.
+
+:ProximaCentauri
+  skos:exactMatch wd:Q14266; 
+  rdf:type dbo:Star;
+  v:distanceFromSun [ rdf:value 4.244; v:uom unit:LY] ;
+  v:mass [ rdf:value 0.1221; v:uom v:SolarMass ] ;
+  v:radius [rdf:value 0.1542; v:uom v:SolarRadius ] ;
+.
+  
+#########  
+# MOONS #  
+#########
+  
+:Phobos
+  rdf:type dbo:Satellite;
+  v:orbits :Mars;
+  v:apoapsis [rdf:value 9517; v:uom unit:KM];
+  v:radius [rdf:value 11.1; v:uom unit:KM] ;
+.
+
+:Deimos
+  rdf:type dbo:Satellite;
+  v:orbits :Mars;
+  v:apoapsis [rdf:value 23470.9; v:uom unit:KM];
+  v:radius [rdf:value 6.2; v:uom unit:KM] ;
+. 
+
+:Io
+  rdf:type dbo:Satellite;
+  v:orbits :Jupiter;
+  v:radius [rdf:value 1818.1; v:uom unit:KM] ;
+.
+
+:Europa
+  rdf:type dbo:Satellite;
+  v:orbits :Jupiter;
+  v:radius [rdf:value 1560.7; v:uom unit:KM] ;
+.
+
+:Ganymede
+  rdf:type dbo:Satellite;
+  v:orbits :Jupiter;
+  v:radius [rdf:value 2634.1; v:uom unit:KM] ;
+.
+
+:Callisto
+  rdf:type dbo:Satellite;
+  v:orbits :Jupiter;
+  v:radius [rdf:value 2408.4; v:uom unit:KM] ;
+.
+
+:Mimas
+  rdf:type dbo:Satellite;
+  v:orbits :Saturn;
+  v:radius [rdf:value 198.2; v:uom unit:KM] ;
+.
+
+:Enceladus
+  rdf:type dbo:Satellite;
+  v:orbits :Saturn;
+  v:radius [rdf:value 252.3; v:uom unit:KM] ;
+.
