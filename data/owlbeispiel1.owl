@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-6="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C1">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C2">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C3">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+        <p rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o4">
+        <p rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o1"/>
+        <p rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#o5">
+        <rdf:type>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#C"/>
+            </owl:Class>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/neumayr/ontologies/2022/6/untitled-ontology-6#p"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
